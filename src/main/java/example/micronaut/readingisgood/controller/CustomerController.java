@@ -12,16 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Optional;
-
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
 @RestController
 @Secured(SecurityRule.IS_AUTHENTICATED)
-public class CustomerController extends BaseController {
+public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
-
     @GetMapping("/customer")
     public Customer getCustomer() {
         Customer customer= new Customer();
